@@ -8,10 +8,10 @@ export default function App() {
 
   const handleEntrarSuper = async () => {
     try {
-      await signIn({email: "super@email.com" , password: "Super123!"});
+      await signIn({email: "super@email.com" , password: "A123456a!"});
       // router.replace("/");
     } catch (error) {
-      console.log(e);
+      console.log(error);
     }
   }
 
@@ -34,7 +34,7 @@ export default function App() {
       signIn({email: "user@email.com" , password: "User123!"})
       }
       />
-      <Button title='Sobre' onPress={() => router.push("/(about)")} />
+      <Button title='Sobre' onPress={() => router.push("about")} />
         <Button
          title='Sair do Aplicativo'
          onPress={() => BackHandler.exitApp()}
