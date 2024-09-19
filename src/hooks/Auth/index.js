@@ -20,6 +20,7 @@ export function AuthProvider({ children }) {
   const {authUser} = useUsersDatabase();
 
   const signIn = async ({ email, password }) => {
+    console.log("signIn email: ", email, "- password: ", password);
     const response = await authUser({email, password});
 
     if(!response){
@@ -28,6 +29,7 @@ export function AuthProvider({ children }) {
         user: null,
         role: null,
       });
+      throw new Error("Usuario ou senha inválidos")
     }
 
     setUser({
