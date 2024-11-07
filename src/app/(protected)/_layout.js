@@ -6,14 +6,17 @@ import {
   DrawerItemList,
 } from "@react-navigation/drawer";
 import { Button, TouchableOpacity, View, Text } from "react-native";
+import useAuth from "../../hooks/Auth/index.js"
 
 function CustomDrawerContent(props) {
+  const {user, signOut} = useAuth();
+
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
-      <TouchableOpacity
+      <TouchableOpacity onPress={()=> signOut()}
         style={{
           justifyContent: "center",
           alignItems: "center",
